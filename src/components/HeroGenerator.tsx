@@ -30,10 +30,9 @@ const HeroGenerator = ({ onGenerate, isLoading }: HeroGeneratorProps) => {
             ✨ Free LLMs.txt Generator
           </div>
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-5">
-            Generate the{" "}
-            <span className="text-primary">Best LLMs.txt</span>
+            <span className="text-primary">LLMs.txt Generator</span>
             <br />
-            Files Instantly
+            Create Files Instantly
           </h1>
           <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
             Convert any website into clean, structured text files optimized for LLM training and inference — powered by Letsmetrix.
