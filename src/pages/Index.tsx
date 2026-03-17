@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import Header from "@/components/Header";
 import HeroGenerator from "@/components/HeroGenerator";
 import GeneratedPreview from "@/components/GeneratedPreview";
 import HowToUse from "@/components/HowToUse";
@@ -9,6 +10,7 @@ import ExampleFile from "@/components/ExampleFile";
 import CrossSellLetsmetrix from "@/components/CrossSellLetsmetrix";
 import FAQ from "@/components/FAQ";
 import MoreTools from "@/components/MoreTools";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   const [content, setContent] = useState<string | null>(null);
@@ -46,6 +48,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <Header />
       <HeroGenerator onGenerate={handleGenerate} isLoading={isLoading} />
       <GeneratedPreview content={content} isLoading={isLoading} url={currentUrl} />
       <HowToUse />
@@ -54,6 +57,7 @@ const Index = () => {
       <CrossSellLetsmetrix />
       <FAQ />
       <MoreTools />
+      <Footer />
     </div>
   );
 };

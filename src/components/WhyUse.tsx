@@ -4,37 +4,42 @@ const reasons = [
   {
     icon: Bot,
     title: "Optimized for LLMs",
-    description: "Generate clean, structured text that large language models can ingest efficiently without hallucinations.",
+    description: "Generate clean, structured text that large language models can ingest efficiently.",
   },
   {
     icon: Zap,
     title: "Lightning Fast",
-    description: "Get results in seconds. Our crawler processes pages in parallel for maximum speed.",
+    description: "Get results in seconds. Pages are processed in parallel for maximum speed.",
   },
   {
     icon: ShieldCheck,
     title: "Noise-Free Content",
-    description: "Automatically strips headers, footers, scripts, and ads — leaving only the content that matters.",
+    description: "Strips headers, footers, scripts, and ads — leaving only what matters.",
   },
   {
     icon: BarChart3,
     title: "SEO-Aware Extraction",
-    description: "Leverages site structure, headings, and metadata to produce contextually rich output.",
+    description: "Leverages headings and metadata to produce contextually rich output.",
   },
 ];
 
 const WhyUse = () => (
-  <section className="bg-section-alt border-b border-border">
-    <div className="container max-w-4xl py-16">
-      <h2 className="text-2xl font-bold mb-10 text-center">Why Use LLMs.txt Generator?</h2>
+  <section id="why-use" className="bg-section-alt">
+    <div className="container max-w-5xl py-20">
+      <h2 className="text-3xl font-extrabold mb-3 text-center">
+        Why Use <span className="text-primary">LLMs.txt Generator</span>?
+      </h2>
+      <p className="text-muted-foreground text-center mb-12 max-w-lg mx-auto">
+        The fastest way to prepare website content for AI consumption
+      </p>
       <div className="grid sm:grid-cols-2 gap-6">
         {reasons.map((r) => (
-          <div key={r.title} className="flex gap-4 p-5 rounded-lg border border-border bg-card">
-            <div className="shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-              <r.icon className="h-5 w-5 text-primary" />
+          <div key={r.title} className="flex gap-4 p-6 rounded-2xl border border-border bg-card hover:shadow-lg hover:shadow-primary/5 transition-shadow">
+            <div className="shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+              <r.icon className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h3 className="font-semibold mb-1">{r.title}</h3>
+              <h3 className="font-bold text-base mb-1">{r.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{r.description}</p>
             </div>
           </div>
