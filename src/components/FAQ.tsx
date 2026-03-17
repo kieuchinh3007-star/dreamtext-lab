@@ -16,29 +16,34 @@ const faqs = [
   },
   {
     q: "What's the difference between llms.txt and llms-full.txt?",
-    a: "The standard llms.txt contains a concise overview with key links and descriptions. The llms-full.txt version includes the complete crawled content from all discovered pages, providing more context for LLM training.",
+    a: "The standard llms.txt contains a concise overview with key links and descriptions. The llms-full.txt version includes the complete crawled content from all discovered pages.",
   },
   {
     q: "How does the generator handle JavaScript-rendered pages?",
-    a: "Our crawler uses headless browser rendering to capture dynamically loaded content, ensuring JavaScript-heavy single-page applications are fully processed.",
+    a: "Our crawler processes the HTML content directly. For JavaScript-heavy single-page applications, some dynamically loaded content may not be captured.",
   },
   {
     q: "Can I use the generated files commercially?",
-    a: "Yes. The generated text files are derived from publicly available website content. You're free to use them for LLM training, RAG pipelines, or any other purpose, subject to the source website's terms of service.",
+    a: "Yes. The generated text files are derived from publicly available website content. You're free to use them for LLM training, RAG pipelines, or any other purpose.",
   },
 ];
 
 const FAQ = () => (
-  <section className="bg-section-alt border-b border-border">
-    <div className="container max-w-2xl py-16">
-      <h2 className="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
-      <Accordion type="single" collapsible className="space-y-2">
+  <section id="faq" className="bg-background">
+    <div className="container max-w-2xl py-20">
+      <h2 className="text-3xl font-extrabold mb-3 text-center">
+        Frequently Asked <span className="text-primary">Questions</span>
+      </h2>
+      <p className="text-muted-foreground text-center mb-10">
+        Everything you need to know about the LLMs.txt Generator
+      </p>
+      <Accordion type="single" collapsible className="space-y-3">
         {faqs.map((faq, i) => (
-          <AccordionItem key={i} value={`faq-${i}`} className="border border-border rounded-lg bg-card px-4">
-            <AccordionTrigger className="text-left font-medium text-sm hover:no-underline">
+          <AccordionItem key={i} value={`faq-${i}`} className="border border-border rounded-xl bg-card px-5">
+            <AccordionTrigger className="text-left font-semibold text-sm hover:no-underline py-4">
               {faq.q}
             </AccordionTrigger>
-            <AccordionContent className="text-muted-foreground text-sm leading-relaxed">
+            <AccordionContent className="text-muted-foreground text-sm leading-relaxed pb-4">
               {faq.a}
             </AccordionContent>
           </AccordionItem>
